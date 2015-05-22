@@ -1,0 +1,52 @@
+/* 
+* Question2.cpp
+*
+* Name:         ESSIEN KORFI ITAM
+* Department:   STATISTICS
+* Reg, No:      45123355DB
+*
+* A Program that reads two integers and determines
+* if the first is a multiple of the second
+*
+* Stub file to enable you complete assignment #1 - Question #2
+*/
+
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+    
+	// Variable declaration
+	int FirstInteger;
+    int SecondInteger;
+    
+    // display welcome messages to user
+    cout << "Welcome - This program reads two integers\n";
+    cout << "and determines if the first is a multiple of the second\n\n";
+    
+    // Read first integer
+    std::cout << "Enter First Integer value here - : ";
+    std::cin >> FirstInteger; // Put code here ...
+    
+    // Read second integer
+    std::cout << "Enter Second Integer value here - : ";
+    std::cin >> SecondInteger; // Put code here ...
+    
+    // Determine if first is a multiple of second
+    // Put code here
+	if ( FirstInteger % SecondInteger == 0)
+    {
+       int x;
+       x = SecondInteger;
+         cout << FirstInteger << " is a Multiple of " << SecondInteger;
+    }
+    
+    if ( FirstInteger % SecondInteger != 0)
+    {
+         cout << FirstInteger << " is not a Multiple of " << SecondInteger;
+    }
+    
+    system("PAUSE >nul");
+    return 0;
+}             

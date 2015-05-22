@@ -1,0 +1,82 @@
+/*
+* Question6.cpp
+*
+* Name:        ESSIEN KORFI ITAM
+* Department:  STATISTICS
+* Reg No:      45123355DB
+*
+* Body Mass Index (BMI) calculator application that reads
+* the user's weight in kilograms and height in meters,
+* calculates and displays the user's Body Mass Index
+*
+* Stub file to enable you complete assignment #1 - Question #6
+*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main ()
+
+{
+	// Variable declaration
+double WeightInKilograms;
+double HeightInMeters;
+double BMI;
+
+// display welcome messages to user
+cout << "Welcome - This is a Body Mass Index (BMI) calculator application that reads ";
+cout << "the user's weight in kilograms and height in meters, calculates and displays ";
+cout << "\nthe user's Body Mass Index." << endl;
+cout << "   " << endl;
+
+cout << "Please below is the criteria for evaluation of the BMI values from the ";
+cout << "\nDepartment of Health and Human Services/National Institution of Health." << endl;
+cout << "   " << endl;
+
+// TODO: display information from the Department of Health and Human Services
+// Put code here ...
+cout << "BMI VALUES";
+cout << "\nUnderweight:\tless than 18.5";
+cout << "\nNormal:\t\tBetween 18.5 and 24.9";
+cout << "\nOverweight:\tBetween 25 and 29.9";
+cout << "\nObese:\t\t30 or greater" << endl;
+
+//TODO: read in values
+cout << "\nEnter your weight (in kg): ";
+cin >> WeightInKilograms; // Put code here ...
+
+cout << "Enter your height (in meters): ";
+cin >> HeightInMeters; // Put code here ...
+cout << "    " << endl;
+
+//TODO: calculate BMI
+// Put code here ...
+	BMI = WeightInKilograms/pow(HeightInMeters,2);
+	
+	if ( BMI < 18.5 )
+	{
+		cout << "Your BMI is " << BMI <<".\nBMI STATUS: Underweight" << endl;
+	}
+
+	else if (BMI >= 18.5, BMI <= 24.9 ) // Put code here ...
+	{
+		cout << "Your BMI is " << BMI <<".\nBMI STATUS: Normal" << endl;
+	}
+
+	else if (BMI >= 25, BMI <= 29.9 ) // Put code here ...
+	{
+		cout << "Your BMI is " << BMI <<".\nBMI STATUS: Overweight" << endl;
+	}
+
+	if ( BMI >= 30 )
+	{
+		cout << "Your BMI is " << BMI <<".\nBMI STATUS: Obese" << endl;
+	}
+ 
+ cout << "\nNOTE: You can evaluate your own BMI using the criteria above to confirm your status";
+ cout << "\nThanks and Goodbye";	
+
+system("PAUSE >nul");
+return 0;
+}

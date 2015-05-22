@@ -1,0 +1,73 @@
+/*
+* Question4.cpp
+*
+* Name:         ESSIEN KORFI ITAM
+* Department:   STATISTICS
+* Reg No:       45123355DB
+*
+* Program that inputs a five-digit integer,
+* seperates the integer into its digits and prints them seperated by three spaces each
+*
+* Stub file to enable you complete assignment #1 - question #4
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+	// Variable declaration
+	int fivedigits;
+	int k,o,r,f,i;
+	
+	// displays welcome messages to user
+	cout << "Welcome - This program reads a five-digit integer,\n";
+	cout << "seperates the integer into its digits and prints them\n";
+	cout << "seperated by three spaces each\n\n";
+	cout << "       " << endl;
+	
+	// TODO: Read integer using cin
+	cout << "Enter five digit value here - "; 
+	cin >> fivedigits; // Put code here ...
+	
+	// check if digit is five-digit integer
+	{
+	 
+		if (fivedigits > 99999)
+		{	 
+	    	cout << "\nERROR! Please enter a five digit value here - ";
+			cin >> fivedigits;
+    	}
+    
+    	if (fivedigits < 10000)
+    	{
+    		cout << "\nERROR! Please enter a five digit value here - ";
+    		cin >> fivedigits;
+		}
+	
+    }
+    
+    // TODO: Seperate the integer into it's digity and print them seperated by three spaces each
+	// Put code here ...
+	k = (fivedigits/10000);
+	o = (fivedigits/1000)%10;
+	r = (fivedigits/100)%10;
+	f = (fivedigits/10)%10;
+	i = fivedigits%10;
+	
+	cout << "	" << endl;
+	cout << "   " << k;
+	cout << "   " << o;
+	cout << "   " << r;
+	cout << "   " << f;
+	cout << "   " << i << endl;
+	cout << "   " << endl;
+	
+	cout << "\nThanks and Goodbye" << endl;
+	
+	system("PAUSE >nul");
+	return 0;
+}
+	
+	
