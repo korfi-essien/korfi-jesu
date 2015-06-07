@@ -1,0 +1,176 @@
+/* 
+* HealthProfile.cpp 
+* HealthProfile member-function definitions. This file contains 
+* implementations of the member functions prototyped in HealthProfile.h 
+* 
+* Stub file for Programming Assignment #2 
+* 
+* Name:        [ ESSIEN KORFI ITAM ] 
+* Matric No:   [ 45123355DB ] 
+* Department:  [ STATISTICS ] 
+* 
+*/ 
+ 
+#include <iostream> 
+#include <string>           // uses C++ string class 
+#include <math.h>           // uses C++ math class 
+#include <iomanip>          // used iomanip class to format output text 
+#include "HealthProfile.h"  // include definition of class HealthProfile 
+using namespace std; 
+ 
+ 
+// constructor initializes patient information 
+HealthProfile::HealthProfile( string firstName, string lastName, string gender, int month, 
+                              int day, int year, int weight, double height, int currentDay, 
+                              int currentMonth, int currentYear) 
+{ 
+    string setFirstName( firstName );      // call set function to initialize firstName 
+    string setLastName( lastName );        // call set function to initialize lastName 
+    string setGender( gender );            // call set function to initialize gender 
+    int setMonth( month );              // call set function to initialize month 
+    int setDay( day );                  // call set function to initialize day 
+    int setYear( year );                // call set function to initialize year 
+    int setWeight( weight );            // call set function to initialize weight 
+    double setHeight( height );            // call set function to initialize height 
+    int setAge( int currentDay, int currentMonth, int currentYear );  // call set function to calculate age 
+} 
+ 
+ 
+// funtion to print object information 
+void HealthProfile::getInformation() 
+{ 
+     cout << "\n\nHEALTH PROFILE FOR - " << getFirstName() << " " << getLastName() << endl; 
+     cout << "First Name: " << setw(17) << getFirstName() << endl; 
+     cout << "Last Name: " << setw(19) << getLastName() << endl; 
+     cout << "Gender: " << setw(20) << getGender() << endl; 
+     cout << "Date of Birth: " << setw(10) << getDay() << "/" << getMonth() << "/" << getYear() << endl; 
+     cout << "Weight (in kilograms): " << setw(3) << getWeight() << endl; 
+     cout << "Height (in meters): " << setw(10) << getHeight() << endl; 
+     cout << "Age: " << setw(21) << getAge() << " year(s)" << endl; 
+     cout << "Body Mass Index (BMI): " << setw(8) << getBMI() << endl; 
+     cout << "Maximum Heart Rate: " << setw(7) << getMaximumHeartRate() << endl; 
+     cout << "Target Heart Rate: " << setw(11) << getTargetHeartRate() << endl; 
+     cout << "\nBMI VALUES CHART" << endl; 
+     cout << "Underweight:   less than 18.5" << endl; 
+     cout << "Normal:        between 18.5 and 24.9" << endl;; 
+     cout << "Overweight:    between 25 and 29.9" << endl; 
+     cout << "Obese:         30 or greater" << endl; 
+} 
+
+ 
+// TODO: Provide implementaion details for functions in HealthProfileStub.h 
+void HealthProfile::setAge( int currentDay, int currentMonth, int currentYear )		// function to set patient's age
+{
+	age = currentYear - year;		// calculates age of patient
+}
+
+int HealthProfile::getAge()			// function to get patient's age
+{
+	return age;				// returns patient's age
+}
+
+double HealthProfile::getBMI()		// function to get patient's BMI
+{
+	double BMI;			// variable BMI
+	BMI = weight/pow(height, 2);	// calculates BMI
+	return BMI;			// returns patient's BMI
+}
+
+
+int HealthProfile::getMaximumHeartRate()	// function to get patient's maximum heart rate
+{
+	int MHR;				// variable MHR representing maximum heart rate 
+	MHR = 220 - age;			// calculates maximum heart rate
+	return MHR;				// returns patient's maximum heart rate
+}
+
+
+double HealthProfile::getTargetHeartRate()	// function to get patient's target heart rate
+{
+	double THR;				// variable THR  representing target heart rate
+	double MHR;				// varible for maximum heart rate
+	THR = 50/100 - 85/100 * MHR;		// calculates target heart rate
+	return THR;				// returns patient's target heart rate
+}
+
+
+void HealthProfile::setFirstName( string ftname )	// function to set patient's firstname
+{
+	firstName = ftname;				// stores firstname in the object
+}
+string HealthProfile::getFirstName()			// function to get patient's firstname
+{
+	return firstName;				// returns patient's firstname
+}
+
+
+void HealthProfile::setLastName( string ltname )	// function to set patient's lastname
+{
+	
+	lastName = ltname;				// stores lastname in the object
+}
+string HealthProfile::getLastName()			// function to get patient's lastname
+{
+	return lastName;				// returns patient's lastname
+}
+
+
+void HealthProfile::setGender( string your_gender)	// function to set patient's gender
+{
+	gender = your_gender;				// stores gender in this object
+}
+string HealthProfile::getGender()			// function to get patient's gender
+{
+	return gender;					// returns patient's gender
+}
+
+
+void HealthProfile::setMonth( int presentmonth )	// function to set patient's month of birth
+{
+	month = presentmonth;				// stores month in this object
+}
+int HealthProfile::getMonth()				// function to get patient's month of birth
+{
+	return month;					// return patient's month of birth
+}
+
+
+void HealthProfile::setDay( int presentday )		// function to set patient's day of birth
+{
+	day = presentday;				// stores day in this object
+}
+int HealthProfile::getDay()				// function to get patient's day of birth
+{
+	return day;					// return patient's day of birth
+}
+
+
+void HealthProfile::setYear( int presentyear )		// function to set patient's year of birth
+{
+	year = presentyear;				// stores year in this object
+}
+int HealthProfile::getYear()				// function to get patient's year of birth
+{
+	return year;					// returns patient's year of birth
+}
+
+
+void HealthProfile::setHeight( double patient_height )	// function to set patient's height
+{
+	height = patient_height;			// stores height in this object
+}
+double HealthProfile::getHeight()			// function to get patient's height
+{
+	return height;					// return patient's height
+}
+
+
+void HealthProfile::setWeight( int patient_weight )	// function to set patient's weight
+{
+	weight = patient_weight;			// stores height in this object
+}
+int HealthProfile::getWeight()				// function to get patient's height
+{
+	return weight;					// return patient's height
+}
+// Implementation for the constructor and getInformation function has already been provided 
